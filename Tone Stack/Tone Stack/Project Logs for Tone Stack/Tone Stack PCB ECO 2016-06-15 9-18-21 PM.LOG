@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=NetR4_2 Pin=VR2-1
+Removed Pin From Net: NetName=NetU1_5 Pin=VR2-2
+Added Pin To Net: NetName=NetU1_5 Pin=VR2-1
+Added Pin To Net: NetName=NetR4_2 Pin=VR2-2
+Added Room: Name=Tone Stack
