@@ -1,0 +1,22 @@
+Circuit: * D:\GitHub\GuitarPreamp\Preamp\Preamp_Simulation.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Aug 20 14:01:48 2016
+Total elapsed time: 1.262 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 40035
+traniter = 40032
+tranpoints = 20017
+accept = 12021
+rejected = 7996
+matrix size = 10
+fillins = 2
+solver = Normal
+Matrix Compiler1: 454 bytes object code size  0.2/0.1/[0.0]
+Matrix Compiler2: 782 bytes object code size  0.1/0.2/[0.1]
+
+
