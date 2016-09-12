@@ -1,0 +1,96 @@
+Added Component: Designator=C1(CAPC2012X09N)
+Added Component: Designator=C2(CAPC2012X09N)
+Added Component: Designator=C3(CAPC2012X09N)
+Added Component: Designator=C4(CAPC2012X09N)
+Added Component: Designator=J1(Conn 2 Pin 2.54mm Pitch)
+Added Component: Designator=J2(Conn 4 Pin 2.54mm Pitch)
+Added Component: Designator=R1(RESC2012X06N)
+Added Component: Designator=R2(RESC2012X06N)
+Added Component: Designator=R3(RESC2012X06N)
+Added Component: Designator=R4(RESC2012X06N)
+Added Component: Designator=R5(RESC2012X06N)
+Added Component: Designator=R6(RESC2012X06N)
+Added Component: Designator=R7(RESC2012X06N)
+Added Component: Designator=R8(RESC2012X06N)
+Added Component: Designator=R9(RESC2012X06N)
+Added Component: Designator=R10(RESC2012X06N)
+Added Component: Designator=U1(VSSOP-DGK)
+Added Component: Designator=U2(SOT23-5)
+Added Component: Designator=VR1(Dual Gang Pot PC Pin)
+Added Component: Designator=VR2(Molex 70553 3 POS)
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=NetC1_2 Pin=C1-2
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_2 Pin=C2-2
+Added Pin To Net: NetName=NetC3_1 Pin=C3-1
+Added Pin To Net: NetName=NetC3_2 Pin=C3-2
+Added Pin To Net: NetName=NetC4_1 Pin=C4-1
+Added Pin To Net: NetName=NetC4_2 Pin=C4-2
+Added Pin To Net: NetName=NetC1_2 Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J2-1
+Added Pin To Net: NetName=V+ Pin=J2-2
+Added Pin To Net: NetName=OUT+ Pin=J2-3
+Added Pin To Net: NetName=OUT- Pin=J2-4
+Added Pin To Net: NetName=VREF Pin=R1-1
+Added Pin To Net: NetName=NetC1_1 Pin=R1-2
+Added Pin To Net: NetName=NetC1_1 Pin=R2-1
+Added Pin To Net: NetName=NetC2_1 Pin=R2-2
+Added Pin To Net: NetName=NetC1_1 Pin=R3-1
+Added Pin To Net: NetName=NetR3_2 Pin=R3-2
+Added Pin To Net: NetName=NetC3_2 Pin=R4-1
+Added Pin To Net: NetName=NetR4_2 Pin=R4-2
+Added Pin To Net: NetName=NetC2_2 Pin=R5-1
+Added Pin To Net: NetName=NetR5_2 Pin=R5-2
+Added Pin To Net: NetName=NetR6_1 Pin=R6-1
+Added Pin To Net: NetName=NetR5_2 Pin=R6-2
+Added Pin To Net: NetName=NetR7_1 Pin=R7-1
+Added Pin To Net: NetName=V+ Pin=R7-2
+Added Pin To Net: NetName=GND Pin=R8-1
+Added Pin To Net: NetName=NetR7_1 Pin=R8-2
+Added Pin To Net: NetName=GND Pin=R9-1
+Added Pin To Net: NetName=NetC4_1 Pin=R9-2
+Added Pin To Net: NetName=NetC4_1 Pin=R10-1
+Added Pin To Net: NetName=OUT+ Pin=R10-2
+Added Pin To Net: NetName=NetR5_2 Pin=U1-1
+Added Pin To Net: NetName=NetC3_2 Pin=U1-2
+Added Pin To Net: NetName=VREF Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-4
+Added Pin To Net: NetName=NetC4_2 Pin=U1-5
+Added Pin To Net: NetName=NetU1_6 Pin=U1-6
+Added Pin To Net: NetName=NetC4_2 Pin=U1-7
+Added Pin To Net: NetName=V+ Pin=U1-8
+Added Pin To Net: NetName=VREF Pin=U2-1
+Added Pin To Net: NetName=GND Pin=U2-2
+Added Pin To Net: NetName=NetR7_1 Pin=U2-3
+Added Pin To Net: NetName=VREF Pin=U2-4
+Added Pin To Net: NetName=V+ Pin=U2-5
+Added Pin To Net: NetName=NetC2_2 Pin=VR1-1
+Added Pin To Net: NetName=NetR4_2 Pin=VR1-2
+Added Pin To Net: NetName=NetC2_1 Pin=VR1-3
+Added Pin To Net: NetName=NetR3_2 Pin=VR1-4
+Added Pin To Net: NetName=NetC3_1 Pin=VR1-5
+Added Pin To Net: NetName=NetR6_1 Pin=VR1-6
+Added Pin To Net: NetName=NetU1_6 Pin=VR2-1
+Added Pin To Net: NetName=NetR5_2 Pin=VR2-2
+Added Pin To Net: NetName=VREF Pin=VR2-3
+Added Member To Class: ClassName=Tone Stack Member=Component C1 1uF
+Added Member To Class: ClassName=Tone Stack Member=Component C2 15nF
+Added Member To Class: ClassName=Tone Stack Member=Component C3 1.2nF
+Added Member To Class: ClassName=Tone Stack Member=Component C4 1uF
+Added Member To Class: ClassName=Tone Stack Member=Component J1 Tone Stack Connectors
+Added Member To Class: ClassName=Tone Stack Member=Component J2 Tone Stack Output Conn
+Added Member To Class: ClassName=Tone Stack Member=Component R1 22K
+Added Member To Class: ClassName=Tone Stack Member=Component R2 22K
+Added Member To Class: ClassName=Tone Stack Member=Component R3 10K
+Added Member To Class: ClassName=Tone Stack Member=Component R4 30K
+Added Member To Class: ClassName=Tone Stack Member=Component R5 22K
+Added Member To Class: ClassName=Tone Stack Member=Component R6 10K
+Added Member To Class: ClassName=Tone Stack Member=Component R7 22K
+Added Member To Class: ClassName=Tone Stack Member=Component R8 22K
+Added Member To Class: ClassName=Tone Stack Member=Component R9 47K
+Added Member To Class: ClassName=Tone Stack Member=Component R10 10K
+Added Member To Class: ClassName=Tone Stack Member=Component U1 OPA2170DGK
+Added Member To Class: ClassName=Tone Stack Member=Component U2 OPA191
+Added Member To Class: ClassName=Tone Stack Member=Component VR1 100K
+Added Member To Class: ClassName=Tone Stack Member=Component VR2 25K
+Added Room: Name=Tone Stack
