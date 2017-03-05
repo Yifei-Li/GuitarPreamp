@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=J1 Old Footprint=SM04B New Footprint=SM04B - all pins
+Change Component Footprint: Designator=J2 Old Footprint=SM04B New Footprint=SM04B - all pins
+Added Pin To Net: NetName=NetC2_1 Pin=J1-4
+Added Pin To Net: NetName=GND Pin=J2-4

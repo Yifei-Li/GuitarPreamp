@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: Preamp.GBR   2016-06-09  1:57:40 PM
+Gerber File Extension Report For: Preamp.GBR   2016-09-28  9:33:28 PM
 ------------------------------------------------------------------------------------------
 
 
@@ -12,4 +12,5 @@ Layer Extension     Layer Description
 .GTS                Top Solder                              
 .GBS                Bottom Solder                           
 .GBO                Bottom Overlay                          
+.GKO                Keep-Out Layer                          
 ------------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: Preamp.PcbDoc   2016-06-09  1:57:41 PM
+NCDrill File Report For: Preamp.PcbDoc   2016-09-28  9:33:28 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,9 +7,8 @@ ASCII RoundHoles File : Preamp.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      28mil (0.711mm)                                           Round             6         PTH        1.35inch (34.19mm)
-T2      40mil (1.016mm)                                           Round             8         PTH        1.88inch (47.63mm)
+T1      28mil (0.711mm)                                           Round             11        PTH        1.83inch (46.50mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              14
+Totals                                                                              11
 
-Total Processing Time (hh:mm:ss) : 00:00:01
+Total Processing Time (hh:mm:ss) : 00:00:00

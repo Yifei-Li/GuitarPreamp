@@ -123,6 +123,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document6]
+DocumentPath=OSH_Park_Run.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Preamp\Design Rule Check - Preamp.html
 DItemRevisionGUID=
@@ -132,47 +149,103 @@ DocumentPath=Project Outputs for Free Documents\NC Drill\Preamp.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.EXTREP
+DocumentPath=Project Outputs for Preamp\NC Drill\Preamp.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GBL
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GBO
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GBS
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GTL
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GTO
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GTS
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Free Documents\NC Drill\Preamp.LDP
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.REP
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.RUL
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument13]
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Free Documents\NC Drill\Preamp.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Preamp\NC Drill\Preamp.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.REP
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.REP
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for Free Documents\Gerber\Preamp.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Preamp\Gerber\Preamp.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument26]
 DocumentPath=Project Outputs for Free Documents\NC Drill\Preamp.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for Preamp\NC Drill\Preamp.TXT
 DItemRevisionGUID=
 
 [Configuration1]

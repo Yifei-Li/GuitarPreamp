@@ -78,7 +78,7 @@ AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
-AnnotateScope=All
+AnnotateScope=Only Selected Parts
 AnnotateOrder=0
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
@@ -106,8 +106,106 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TAXCILRC
 
+[Document5]
+DocumentPath=Temporary Gerber.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document6]
+DocumentPath=OshPark Run.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Tone Stack\Design Rule Check - Tone Stack.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Free Documents\NC Drill\Tone Stack.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Tone Stack\NC Drill\ToneStack.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Free Documents\NC Drill\Tone Stack.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Tone Stack\NC Drill\ToneStack.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.REP
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Tone Stack\Gerber\ToneStack.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Free Documents\NC Drill\Tone Stack.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Tone Stack\NC Drill\ToneStack.TXT
 DItemRevisionGUID=
 
 [Configuration1]
@@ -934,82 +1032,88 @@ UpdateVariants=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
 ComponentLibraryIdentifier0=GuitarLibrary.SchLib
-ComponentDesignItemID0=CAP 1.2nF 0805
-ComponentSymbolReference0=CAP 1.2nF 0805
+ComponentDesignItemID0=CAP CER 0.1uF 0603
+ComponentSymbolReference0=CAP CER 0.1uF 0603
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 ComponentLibIdentifierKind1=Library Name And Type
 ComponentLibraryIdentifier1=GuitarLibrary.SchLib
-ComponentDesignItemID1=CAP 15nF 0805
-ComponentSymbolReference1=CAP 15nF 0805
+ComponentDesignItemID1=CAP CER 1uF 0603
+ComponentSymbolReference1=CAP CER 1uF 0603
 ComponentUpdate1=1
 ComponentIsDeviceSheet1=0
 ComponentLibIdentifierKind2=Library Name And Type
 ComponentLibraryIdentifier2=GuitarLibrary.SchLib
-ComponentDesignItemID2=CAP 1uF 0805
-ComponentSymbolReference2=CAP 1uF 0805
+ComponentDesignItemID2=CAP CER 2200pF 0603
+ComponentSymbolReference2=CAP CER 2200pF 0603
 ComponentUpdate2=1
 ComponentIsDeviceSheet2=0
 ComponentLibIdentifierKind3=Library Name And Type
 ComponentLibraryIdentifier3=GuitarLibrary.SchLib
-ComponentDesignItemID3=OPA191
-ComponentSymbolReference3=OPA191
+ComponentDesignItemID3=CAP CER 4700pF 0603
+ComponentSymbolReference3=CAP CER 4700pF 0603
 ComponentUpdate3=1
 ComponentIsDeviceSheet3=0
 ComponentLibIdentifierKind4=Library Name And Type
 ComponentLibraryIdentifier4=GuitarLibrary.SchLib
-ComponentDesignItemID4=OPA2170DGK
-ComponentSymbolReference4=OPA2170DGK
+ComponentDesignItemID4=OPA191
+ComponentSymbolReference4=OPA191
 ComponentUpdate4=1
 ComponentIsDeviceSheet4=0
 ComponentLibIdentifierKind5=Library Name And Type
 ComponentLibraryIdentifier5=GuitarLibrary.SchLib
-ComponentDesignItemID5=Pot - Dual Gang
-ComponentSymbolReference5=Pot - Dual Gang
+ComponentDesignItemID5=OPA2170DGK
+ComponentSymbolReference5=OPA2170DGK
 ComponentUpdate5=1
 ComponentIsDeviceSheet5=0
 ComponentLibIdentifierKind6=Library Name And Type
 ComponentLibraryIdentifier6=GuitarLibrary.SchLib
-ComponentDesignItemID6=Pot - Single Gang
-ComponentSymbolReference6=Pot - Single Gang
+ComponentDesignItemID6=Pot - Dual Gang
+ComponentSymbolReference6=Pot - Dual Gang
 ComponentUpdate6=1
 ComponentIsDeviceSheet6=0
 ComponentLibIdentifierKind7=Library Name And Type
 ComponentLibraryIdentifier7=GuitarLibrary.SchLib
-ComponentDesignItemID7=RES 10K 0805
-ComponentSymbolReference7=RES 10K 0805
+ComponentDesignItemID7=Pot - Single Gang
+ComponentSymbolReference7=Pot - Single Gang
 ComponentUpdate7=1
 ComponentIsDeviceSheet7=0
 ComponentLibIdentifierKind8=Library Name And Type
 ComponentLibraryIdentifier8=GuitarLibrary.SchLib
-ComponentDesignItemID8=RES 22K 0805
-ComponentSymbolReference8=RES 22K 0805
+ComponentDesignItemID8=RES 10K 0603
+ComponentSymbolReference8=RES 10K 0603
 ComponentUpdate8=1
 ComponentIsDeviceSheet8=0
 ComponentLibIdentifierKind9=Library Name And Type
 ComponentLibraryIdentifier9=GuitarLibrary.SchLib
-ComponentDesignItemID9=RES 30K 0805
-ComponentSymbolReference9=RES 30K 0805
+ComponentDesignItemID9=RES 20K 0603
+ComponentSymbolReference9=RES 20K 0603
 ComponentUpdate9=1
 ComponentIsDeviceSheet9=0
 ComponentLibIdentifierKind10=Library Name And Type
 ComponentLibraryIdentifier10=GuitarLibrary.SchLib
-ComponentDesignItemID10=RES 47K 0805
-ComponentSymbolReference10=RES 47K 0805
+ComponentDesignItemID10=RES 4.99K 0603
+ComponentSymbolReference10=RES 4.99K 0603
 ComponentUpdate10=1
 ComponentIsDeviceSheet10=0
 ComponentLibIdentifierKind11=Library Name And Type
 ComponentLibraryIdentifier11=GuitarLibrary.SchLib
-ComponentDesignItemID11=Tone Stack Connectors
-ComponentSymbolReference11=Tone Stack Connectors
+ComponentDesignItemID11=RES 47K 0603
+ComponentSymbolReference11=RES 47K 0603
 ComponentUpdate11=1
 ComponentIsDeviceSheet11=0
 ComponentLibIdentifierKind12=Library Name And Type
 ComponentLibraryIdentifier12=GuitarLibrary.SchLib
-ComponentDesignItemID12=Tone Stack Output Conn
-ComponentSymbolReference12=Tone Stack Output Conn
+ComponentDesignItemID12=Tone Stack Connectors
+ComponentSymbolReference12=Tone Stack Connectors
 ComponentUpdate12=1
 ComponentIsDeviceSheet12=0
+ComponentLibIdentifierKind13=Library Name And Type
+ComponentLibraryIdentifier13=GuitarLibrary.SchLib
+ComponentDesignItemID13=Tone Stack Output Conn
+ComponentSymbolReference13=Tone Stack Output Conn
+ComponentUpdate13=1
+ComponentIsDeviceSheet13=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1025,32 +1129,42 @@ RemoveModels=1
 UpdateCurrentModels=1
 ParameterName0=Amplifier
 ParameterUpdate0=1
-ParameterName1=Comment
+ParameterName1=Cable
 ParameterUpdate1=1
-ParameterName2=Component Kind
+ParameterName2=Comment
 ParameterUpdate2=1
-ParameterName3=Description
+ParameterName3=Component Kind
 ParameterUpdate3=1
-ParameterName4=Digikey Part Number
+ParameterName4=Description
 ParameterUpdate4=1
-ParameterName5=Library Reference
+ParameterName5=Digikey Part Number
 ParameterUpdate5=1
-ParameterName6=Manufacturer
+ParameterName6=Library Reference
 ParameterUpdate6=1
-ParameterName7=Power
+ParameterName7=Manufacturer
 ParameterUpdate7=1
-ParameterName8=Rating
+ParameterName8=Manufacturer Part Number
 ParameterUpdate8=1
-ParameterName9=Tolerance
+ParameterName9=Package
 ParameterUpdate9=1
-ParameterName10=Type
+ParameterName10=Power
 ParameterUpdate10=1
-ParameterName11=Value
+ParameterName11=Rating
 ParameterUpdate11=1
+ParameterName12=Temperature
+ParameterUpdate12=1
+ParameterName13=Tolerance
+ParameterUpdate13=1
+ParameterName14=Type
+ParameterUpdate14=1
+ParameterName15=Value
+ParameterUpdate15=1
+ParameterName16=Voltage
+ParameterUpdate16=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=CAPC2012X09N
+ModelName0=CAPC1608X09N
 ModelUpdate0=1
 ModelType1=PCBLIB
 ModelName1=Conn 2 Pin 2.54mm Pitch
@@ -1059,13 +1173,13 @@ ModelType2=PCBLIB
 ModelName2=Conn 4 Pin 2.54mm Pitch
 ModelUpdate2=1
 ModelType3=PCBLIB
-ModelName3=Dual Gang Pot PC Pin
+ModelName3=RESC1608X06N
 ModelUpdate3=1
 ModelType4=PCBLIB
-ModelName4=Molex 70553 3 POS
+ModelName4=SM04B
 ModelUpdate4=1
 ModelType5=PCBLIB
-ModelName5=RESC2012X06N
+ModelName5=SM06B
 ModelUpdate5=1
 ModelType6=PCBLIB
 ModelName6=SOT23-5

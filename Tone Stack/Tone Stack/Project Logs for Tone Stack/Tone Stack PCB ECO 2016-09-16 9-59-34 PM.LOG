@@ -1,0 +1,14 @@
+Added Component: Designator=VR1(Dual Gang Pot PC Pin)
+Added Component: Designator=VR2(Molex 70553 3 POS)
+Added Pin To Net: NetName=NetC2_2 Pin=VR1-1
+Added Pin To Net: NetName=NetR4_2 Pin=VR1-2
+Added Pin To Net: NetName=NetC2_1 Pin=VR1-3
+Added Pin To Net: NetName=NetR3_2 Pin=VR1-4
+Added Pin To Net: NetName=NetC3_1 Pin=VR1-5
+Added Pin To Net: NetName=NetR6_1 Pin=VR1-6
+Added Pin To Net: NetName=NetU1_6 Pin=VR2-1
+Added Pin To Net: NetName=NetR5_2 Pin=VR2-2
+Added Pin To Net: NetName=VREF Pin=VR2-3
+Added Member To Class: ClassName=Tone Stack Member=Component VR1 100K
+Added Member To Class: ClassName=Tone Stack Member=Component VR2 25K
+Added Room: Name=Tone Stack

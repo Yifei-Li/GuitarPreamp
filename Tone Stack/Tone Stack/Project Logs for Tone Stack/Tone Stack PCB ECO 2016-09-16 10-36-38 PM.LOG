@@ -1,0 +1,5 @@
+Added Component: Designator=VR2(SM04B)
+Added Pin To Net: NetName=NetU1_6 Pin=VR2-1
+Added Pin To Net: NetName=NetR5_2 Pin=VR2-2
+Added Pin To Net: NetName=VREF Pin=VR2-3
+Added Member To Class: ClassName=Tone Stack Member=Component VR2 25K

@@ -1,0 +1,4 @@
+Change Component DesignItemId : Designator=U1 Old DesignItemId=OPA2170DGK New DesignItemId=OPA2170AIDR
+Change Component Footprint: Designator=U1 Old Footprint=VSSOP-DGK New Footprint=SOIC127P600X175-8M
+Change Component Comment : Designator=U1 Old Comment=OPA2170DGK New Comment=OPA2170AIDR
+Added Member To Class: ClassName=Tone Stack Member=Component U1 OPA2170AIDR
