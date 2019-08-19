@@ -1,0 +1,11 @@
+Added Pin To Net: NetName=NetC2_1 Pin=J4-1
+Added Pin To Net: NetName=NetJ4_2 Pin=J4-2
+Added Pin To Net: NetName=NetC3_1 Pin=J4-3
+Added Pin To Net: NetName=NetJ4_4 Pin=J4-4
+Added Pin To Net: NetName=VOL_A Pin=J4-5
+Added Pin To Net: NetName=NetJ4_6 Pin=J4-6
+Added Pin To Net: NetName=VREF Pin=J4-7
+Added Pin To Net: NetName=NetC2_2 Pin=J4-13
+Added Pin To Net: NetName=NetJ4_14 Pin=J4-14
+Added Room: Name=Designator
+Added Room: Name=Designator

@@ -1,0 +1,276 @@
+Removed Pin From Net: NetName=V+ Pin=C7-2
+Removed Pin From Net: NetName=GND Pin=C?-1
+Removed Pin From Net: NetName=V+ Pin=C?-2
+Removed Pin From Net: NetName=GND Pin=R8-2
+Removed Pin From Net: NetName=V+ Pin=U?-1
+Removed Pin From Net: NetName=GND Pin=U?-2
+Removed Pin From Net: NetName=VREF Pin=U?-5
+Removed Member From Class: ClassName=Tone_Stack_V2 Member=C?
+Removed Member From Class: ClassName=Tone_Stack_V2 Member=U?
+Change Component Comment : Designator=R8 Old Comment=20K New Comment=10k
+Change component parameters: Designator = "R8"; Footprint = "RESC1608X06N"; UniqueID = "\JLLJJWOT\FUAPSXUW"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Digikey Part Number"; Value = "311-10.0KHRCT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature"; Value = "155dC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "RES"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10k"; VariantName = "[No Variations]"
+Added Component: Designator=C1(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "490-10487-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM188R7YA105KA12D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "35V"; VariantName = "[No Variations]"
+Added Component: Designator=C2(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "399-20390-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "C0G/NP0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "12nf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "25V"; VariantName = "[No Variations]"
+Added Component: Designator=C3(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "445-172684-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TDK"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "C0G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "4700pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "100V"; VariantName = "[No Variations]"
+Added Component: Designator=C4(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "490-1519-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=C5(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "490-10487-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM188R7YA105KA12D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "35V"; VariantName = "[No Variations]"
+Added Component: Designator=C6(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "490-10487-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM188R7YA105KA12D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "35V"; VariantName = "[No Variations]"
+Added Component: Designator=C8(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "490-1519-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=C9(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "490-1519-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=C10(CAPC1608X09N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "490-10487-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "GRM188R7YA105KA12D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "35V"; VariantName = "[No Variations]"
+Added Component: Designator=R1(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-47.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "47K"; VariantName = "[No Variations]"
+Added Component: Designator=R2(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-20.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-10.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "155dC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10k"; VariantName = "[No Variations]"
+Added Component: Designator=R4(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-20.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-20.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20K"; VariantName = "[No Variations]"
+Added Component: Designator=R6(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-10.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "155dC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10k"; VariantName = "[No Variations]"
+Added Component: Designator=R7(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-47.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "47K"; VariantName = "[No Variations]"
+Added Component: Designator=R9(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-10.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "155dC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "RES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10k"; VariantName = "[No Variations]"
+Added Component: Designator=R10(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-20.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20K"; VariantName = "[No Variations]"
+Added Component: Designator=R11(RESC1608X06N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "311-20.0KHRCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20K"; VariantName = "[No Variations]"
+Added Component: Designator=U2(SOT95P280X145-5N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Current - Output"; Value = "200mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current - Quiescent (Iq)"; Value = "90µA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digikey Part Number"; Value = "497-16672-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage - Input (Max)"; Value = "18V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Dropout (Max)"; Value = "0.35V @ 200mA"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=PUP_SEL_OUT Pin=C1-1
+Added Pin To Net: NetName=NetC1_2 Pin=C1-2
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_2 Pin=C2-2
+Added Pin To Net: NetName=NetC3_2 Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=V+ Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=V+ Pin=C6-2
+Added Pin To Net: NetName=VREF Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=VREF Pin=C8-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=V+ Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=V+ Pin=C10-2
+Added Pin To Net: NetName=GND Pin=J3-11
+Added Pin To Net: NetName=GND Pin=J3-12
+Added Pin To Net: NetName=GND Pin=J3-13
+Added Pin To Net: NetName=NetC2_1 Pin=J4-1
+Added Pin To Net: NetName=NetJ4_2 Pin=J4-2
+Added Pin To Net: NetName=NetJ4_4 Pin=J4-4
+Added Pin To Net: NetName=VOL_A Pin=J4-5
+Added Pin To Net: NetName=NetJ4_6 Pin=J4-6
+Added Pin To Net: NetName=VREF Pin=J4-7
+Added Pin To Net: NetName=NetC2_2 Pin=J4-13
+Added Pin To Net: NetName=NetJ4_14 Pin=J4-14
+Added Pin To Net: NetName=VREF Pin=R1-1
+Added Pin To Net: NetName=NetC1_2 Pin=R1-2
+Added Pin To Net: NetName=NetC1_2 Pin=R2-1
+Added Pin To Net: NetName=NetC2_1 Pin=R2-2
+Added Pin To Net: NetName=NetC1_2 Pin=R3-1
+Added Pin To Net: NetName=NetJ4_2 Pin=R3-2
+Added Pin To Net: NetName=NetC3_2 Pin=R4-1
+Added Pin To Net: NetName=NetJ4_14 Pin=R4-2
+Added Pin To Net: NetName=NetC2_2 Pin=R5-1
+Added Pin To Net: NetName=NetJ4_5 Pin=R5-2
+Added Pin To Net: NetName=NetJ4_4 Pin=R6-1
+Added Pin To Net: NetName=NetJ4_5 Pin=R6-2
+Added Pin To Net: NetName=GND Pin=R7-1
+Added Pin To Net: NetName=V+ Pin=R9-1
+Added Pin To Net: NetName=VREF Pin=R10-2
+Added Pin To Net: NetName=GND Pin=R11-2
+Added Pin To Net: NetName=V+ Pin=U2-1
+Added Pin To Net: NetName=GND Pin=U2-2
+Added Pin To Net: NetName=VREF Pin=U2-5
+Change Net Name : Old Net Name=NetC3_1 New Net Name=TREB_W
+Added Pin To Net: NetName=NetC3_1 Pin=C3-1
+Added Pin To Net: NetName=NetC3_1 Pin=J4-3
+Added Net: Name=NetC3_1
+Added Pin To Net: NetName=NetC5_1 Pin=C5-1
+Added Pin To Net: NetName=NetC5_1 Pin=U1-5
+Added Pin To Net: NetName=NetC5_1 Pin=U1-7
+Added Net: Name=NetC5_1
+Added Pin To Net: NetName=NetC5_2 Pin=C5-2
+Added Pin To Net: NetName=NetC5_2 Pin=R7-2
+Added Pin To Net: NetName=NetC5_2 Pin=R8-1
+Added Net: Name=NetC5_2
+Added Pin To Net: NetName=NetR9_2 Pin=R9-2
+Added Pin To Net: NetName=NetR9_2 Pin=U2-3
+Added Net: Name=NetR9_2
+Added Pin To Net: NetName=NetR10_1 Pin=R10-1
+Added Pin To Net: NetName=NetR10_1 Pin=R11-1
+Added Pin To Net: NetName=NetR10_1 Pin=U2-4
+Added Net: Name=NetR10_1
+Added Pin To Net: NetName=TS_OUT Pin=J4-8
+Added Pin To Net: NetName=TS_OUT Pin=J4-9
+Added Pin To Net: NetName=TS_OUT Pin=J4-10
+Added Pin To Net: NetName=TS_OUT Pin=J4-11
+Added Pin To Net: NetName=TS_OUT Pin=J4-12
+Added Pin To Net: NetName=TS_OUT Pin=R8-2
+Added Net: Name=TS_OUT
+Added Pin To Net: NetName=VBAT Pin=J3-9
+Added Pin To Net: NetName=VBAT Pin=J3-10
+Added Pin To Net: NetName=VBAT Pin=Q1-3
+Added Net: Name=VBAT
+Change Class Name : Old Net Name=Connectors New Net Name=Designator
+Change Class Name : Old Net Name=Tone_Stack_V2 New Net Name=Designator
+Added Member To Class: ClassName=Designator Member=Component C1 1uF
+Added Member To Class: ClassName=Designator Member=Component C2 12nf
+Added Member To Class: ClassName=Designator Member=Component C3 4700pF
+Added Member To Class: ClassName=Designator Member=Component C4 0.1uF
+Added Member To Class: ClassName=Designator Member=Component C5 1uF
+Added Member To Class: ClassName=Designator Member=Component C6 1uF
+Added Member To Class: ClassName=Designator Member=Component C8 0.1uF
+Added Member To Class: ClassName=Designator Member=Component C9 0.1uF
+Added Member To Class: ClassName=Designator Member=Component C10 1uF
+Added Member To Class: ClassName=Designator Member=Component R1 47K
+Added Member To Class: ClassName=Designator Member=Component R2 20K
+Added Member To Class: ClassName=Designator Member=Component R3 10k
+Added Member To Class: ClassName=Designator Member=Component R4 20K
+Added Member To Class: ClassName=Designator Member=Component R5 20K
+Added Member To Class: ClassName=Designator Member=Component R6 10k
+Added Member To Class: ClassName=Designator Member=Component R7 47K
+Added Member To Class: ClassName=Designator Member=Component R9 10k
+Added Member To Class: ClassName=Designator Member=Component R10 20K
+Added Member To Class: ClassName=Designator Member=Component R11 20K
+Added Member To Class: ClassName=Designator Member=Component U2 IC REG LIN POS ADJ 200MA SOT23-5
+Added Room: Name=Designator
+Added Room: Name=Designator
