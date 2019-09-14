@@ -1,0 +1,688 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD18\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2019-09-12</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9:11:52 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc" class="file"><acronym title="D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc">D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">116</td></tr>
+</table>
+</td>
+</table><a name="IDMQPK1BTBCYXVHBDZANIIVW5W4GL34QEK51KVPEPXAPMNHDZZOJ2F"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHEGU0YONSPROJ1015FOXTA51AO2KV05PYKH053MC3OT3IFTDMUUJ">Clearance Constraint (Gap=7mil) (All),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5RNCSCJSE2S1DD3FDYJG2TBG2OD4LHV00XC3JCNOFQZHJKL4N5H">Clearance Constraint (Gap=10mil) (InNamedPolygon('VBAT_BOT') Or InNamedPolygon('GND_BOT')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY5HVHKYECPTXOJWBYVHPKD5TYI55CEJQX3MJFSDD1OLAEFPZBPIF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZIMGNWEDLOVQMGFFH3JPCWMGLDJ0QEXFIVGEJBBWPAZTDGS50BXB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAWRD5E0X4VMBEJHFORAJVU30ZKIFS1JNFZHG3ROBZZA50KPFGFWH">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOU4PCJXVCBMBO5DBYCLALHA2KNYU4UCENDN2KBN3J2R0B5ZDIBCI">Width Constraint (Min=7mil) (Max=50mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0OR5YKN1QNSHV3MISME5IXO3O5JNMJSA5JAGGIMWYIF4JA20FFL">Power Plane Connect Rule(Relief Connect )(Expansion=10mil) (Conductor Width=12mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDS545DCI4NQCFHTECNBYPCQVZ4O0MOHR3MFPLOITQSNN2SKB3Z1B">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIXJ1AHSBBBWBRZCISQAZSTLDFF3IYFQ2FNHK5PA3C0EDQFGEMBH">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWDQQ1CRUE2RWI0QYDA4EEVGIWMKXS5SOPLY45MOPTIR5PM14DUJB">Minimum Solder Mask Sliver (Gap=5mil) (All),(All)</a></td>
+<td class="column2">54</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCMGVLRFUIG2RFPTQPPDEF5FKPEK3XY15LZJPJDOV3UCDP4OGZTIB">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">54</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRDYBQHSHOE5SOERDHIUUZC2PQJZMKSKZ5B0QIYNPDG4Q1AZHFIEF">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVCVUJKBAESCJIFMYDZ4ECALJBK1DEMLF2WPFAIC33DORY2GGYGGK">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1KM11I0R1W11E51RZHEXVREIRKC3I5XT4CSOVEE2DEEUYOYD2QMC">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">116</td>
+</tr>
+</table><br><a name="IDHEGU0YONSPROJ1015FOXTA51AO2KV05PYKH053MC3OT3IFTDMUUJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=7mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1451.876mil|Location2.Y=1458.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1451.876mil|Location2.Y=1458.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,390.001mil) on Bottom Layer And Pad Free-(90mil,390.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1451.876mil|Location2.Y=1458.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1451.876mil|Location2.Y=1458.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,390.001mil) on Top Layer And Pad Free-(90mil,390.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1671.876mil|Location2.Y=1678.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1671.876mil|Location2.Y=1678.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,610.001mil) on Bottom Layer And Pad Free-(90mil,610.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1671.876mil|Location2.Y=1678.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1671.876mil|Location2.Y=1678.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,610.001mil) on Top Layer And Pad Free-(90mil,610.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1151.876mil|Location2.Y=1158.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1151.876mil|Location2.Y=1158.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,90.001mil) on Bottom Layer And Pad Free-(90mil,90.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1151.876mil|Location2.Y=1158.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1151.876mil|Location2.Y=1158.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,90.001mil) on Top Layer And Pad Free-(90mil,90.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1971.876mil|Location2.Y=1978.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1971.876mil|Location2.Y=1978.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,910.001mil) on Bottom Layer And Pad Free-(90mil,910.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1971.876mil|Location2.Y=1978.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=897.19mil|Location2.X=903.44mil|Location1.Y=1971.876mil|Location2.Y=1978.126mil|Absolute=True">Clearance Constraint: (0.63mil &lt; 5mil) Between Arc (90mil,910.001mil) on Top Layer And Pad Free-(90mil,910.001mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDWDQQ1CRUE2RWI0QYDA4EEVGIWMKXS5SOPLY45MOPTIR5PM14DUJB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=5mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1351.088mil|Location2.Y=1357.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1351.088mil|Location2.Y=1357.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-1(209.134mil,299.056mil) on Top Layer And Pad J1-2(209.134mil,279.37mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1292.033mil|Location2.Y=1298.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1292.033mil|Location2.Y=1298.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J1-10(350.866mil,220.316mil) on Top Layer And Pad J1-11(350.866mil,240mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1272.348mil|Location2.Y=1278.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1272.348mil|Location2.Y=1278.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-10(350.866mil,220.316mil) on Top Layer And Pad J1-9(350.866mil,200.63mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1311.718mil|Location2.Y=1317.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1311.718mil|Location2.Y=1317.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-11(350.866mil,240mil) on Top Layer And Pad J1-12(350.866mil,259.686mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1331.403mil|Location2.Y=1337.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1331.403mil|Location2.Y=1337.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J1-12(350.866mil,259.686mil) on Top Layer And Pad J1-13(350.866mil,279.37mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1351.088mil|Location2.Y=1357.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1351.088mil|Location2.Y=1357.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-13(350.866mil,279.37mil) on Top Layer And Pad J1-14(350.866mil,299.056mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1331.403mil|Location2.Y=1337.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1331.403mil|Location2.Y=1337.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J1-2(209.134mil,279.37mil) on Top Layer And Pad J1-3(209.134mil,259.686mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1311.718mil|Location2.Y=1317.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1311.718mil|Location2.Y=1317.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-3(209.134mil,259.686mil) on Top Layer And Pad J1-4(209.134mil,240mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1292.033mil|Location2.Y=1298.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1292.033mil|Location2.Y=1298.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J1-4(209.134mil,240mil) on Top Layer And Pad J1-5(209.134mil,220.316mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1272.348mil|Location2.Y=1278.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1272.348mil|Location2.Y=1278.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-5(209.134mil,220.316mil) on Top Layer And Pad J1-6(209.134mil,200.63mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1252.662mil|Location2.Y=1258.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1252.662mil|Location2.Y=1258.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-6(209.134mil,200.63mil) on Top Layer And Pad J1-7(209.134mil,180.944mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1252.662mil|Location2.Y=1258.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1252.662mil|Location2.Y=1258.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J1-8(350.866mil,180.944mil) on Top Layer And Pad J1-9(350.866mil,200.63mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1871.088mil|Location2.Y=1877.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1871.088mil|Location2.Y=1877.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-1(209.134mil,819.056mil) on Top Layer And Pad J2-2(209.134mil,799.37mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1812.033mil|Location2.Y=1818.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1812.033mil|Location2.Y=1818.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J2-10(350.866mil,740.316mil) on Top Layer And Pad J2-11(350.866mil,760mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1792.348mil|Location2.Y=1798.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1792.348mil|Location2.Y=1798.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-10(350.866mil,740.316mil) on Top Layer And Pad J2-9(350.866mil,720.63mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1831.718mil|Location2.Y=1837.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1831.718mil|Location2.Y=1837.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-11(350.866mil,760mil) on Top Layer And Pad J2-12(350.866mil,779.686mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1851.403mil|Location2.Y=1857.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1851.403mil|Location2.Y=1857.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J2-12(350.866mil,779.686mil) on Top Layer And Pad J2-13(350.866mil,799.37mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1871.088mil|Location2.Y=1877.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1871.088mil|Location2.Y=1877.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-13(350.866mil,799.37mil) on Top Layer And Pad J2-14(350.866mil,819.056mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1851.403mil|Location2.Y=1857.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1851.403mil|Location2.Y=1857.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J2-2(209.134mil,799.37mil) on Top Layer And Pad J2-3(209.134mil,779.686mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1831.718mil|Location2.Y=1837.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1831.718mil|Location2.Y=1837.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-3(209.134mil,779.686mil) on Top Layer And Pad J2-4(209.134mil,760mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1812.033mil|Location2.Y=1818.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1812.033mil|Location2.Y=1818.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J2-4(209.134mil,760mil) on Top Layer And Pad J2-5(209.134mil,740.316mil) on Top Layer [Top Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1792.348mil|Location2.Y=1798.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1792.348mil|Location2.Y=1798.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-5(209.134mil,740.316mil) on Top Layer And Pad J2-6(209.134mil,720.63mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1772.662mil|Location2.Y=1778.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.505mil|Location2.X=1028.755mil|Location1.Y=1772.662mil|Location2.Y=1778.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-6(209.134mil,720.63mil) on Top Layer And Pad J2-7(209.134mil,700.944mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1772.662mil|Location2.Y=1778.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.237mil|Location2.X=1170.487mil|Location1.Y=1772.662mil|Location2.Y=1778.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J2-8(350.866mil,700.944mil) on Top Layer And Pad J2-9(350.866mil,720.63mil) on Top Layer [Top Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-1(329.134mil,559.056mil) on Bottom Layer And Pad J3-2(329.134mil,539.37mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J3-10(470.866mil,480.316mil) on Bottom Layer And Pad J3-11(470.866mil,500mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-10(470.866mil,480.316mil) on Bottom Layer And Pad J3-9(470.866mil,460.63mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-11(470.866mil,500mil) on Bottom Layer And Pad J3-12(470.866mil,519.686mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J3-12(470.866mil,519.686mil) on Bottom Layer And Pad J3-13(470.866mil,539.37mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-13(470.866mil,539.37mil) on Bottom Layer And Pad J3-14(470.866mil,559.056mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J3-2(329.134mil,539.37mil) on Bottom Layer And Pad J3-3(329.134mil,519.686mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-3(329.134mil,519.686mil) on Bottom Layer And Pad J3-4(329.134mil,500mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J3-4(329.134mil,500mil) on Bottom Layer And Pad J3-5(329.134mil,480.316mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-5(329.134mil,480.316mil) on Bottom Layer And Pad J3-6(329.134mil,460.63mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1142.505mil|Location2.X=1148.755mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-6(329.134mil,460.63mil) on Bottom Layer And Pad J3-7(329.134mil,440.944mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.237mil|Location2.X=1290.487mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J3-8(470.866mil,440.944mil) on Bottom Layer And Pad J3-9(470.866mil,460.63mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-1(979.134mil,559.056mil) on Bottom Layer And Pad J4-2(979.134mil,539.37mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J4-10(1120.866mil,480.316mil) on Bottom Layer And Pad J4-11(1120.866mil,500mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-10(1120.866mil,480.316mil) on Bottom Layer And Pad J4-9(1120.866mil,460.63mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-11(1120.866mil,500mil) on Bottom Layer And Pad J4-12(1120.866mil,519.686mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J4-12(1120.866mil,519.686mil) on Bottom Layer And Pad J4-13(1120.866mil,539.37mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1611.088mil|Location2.Y=1617.338mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-13(1120.866mil,539.37mil) on Bottom Layer And Pad J4-14(1120.866mil,559.056mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1591.403mil|Location2.Y=1597.653mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J4-2(979.134mil,539.37mil) on Bottom Layer And Pad J4-3(979.134mil,519.686mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1571.718mil|Location2.Y=1577.968mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-3(979.134mil,519.686mil) on Bottom Layer And Pad J4-4(979.134mil,500mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1552.033mil|Location2.Y=1558.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.857mil &lt; 5mil) Between Pad J4-4(979.134mil,500mil) on Bottom Layer And Pad J4-5(979.134mil,480.316mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.857mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1532.348mil|Location2.Y=1538.598mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-5(979.134mil,480.316mil) on Bottom Layer And Pad J4-6(979.134mil,460.63mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.505mil|Location2.X=1798.755mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-6(979.134mil,460.63mil) on Bottom Layer And Pad J4-7(979.134mil,440.944mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.237mil|Location2.X=1940.487mil|Location1.Y=1512.662mil|Location2.Y=1518.912mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.859mil &lt; 5mil) Between Pad J4-8(1120.866mil,440.944mil) on Bottom Layer And Pad J4-9(1120.866mil,460.63mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.859mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.545mil|Location2.X=1598.795mil|Location1.Y=1317.466mil|Location2.Y=1323.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.545mil|Location2.X=1598.795mil|Location1.Y=1317.466mil|Location2.Y=1323.716mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.905mil &lt; 5mil) Between Pad U1-1(762.402mil,268.386mil) on Top Layer And Pad U1-2(762.402mil,242.796mil) on Top Layer [Top Solder] Mask Sliver [1.905mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.545mil|Location2.X=1598.795mil|Location1.Y=1291.875mil|Location2.Y=1298.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.545mil|Location2.X=1598.795mil|Location1.Y=1291.875mil|Location2.Y=1298.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.907mil &lt; 5mil) Between Pad U1-2(762.402mil,242.796mil) on Top Layer And Pad U1-3(762.402mil,217.204mil) on Top Layer [Top Solder] Mask Sliver [1.907mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.545mil|Location2.X=1598.795mil|Location1.Y=1266.284mil|Location2.Y=1272.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1592.545mil|Location2.X=1598.795mil|Location1.Y=1266.284mil|Location2.Y=1272.534mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.905mil &lt; 5mil) Between Pad U1-3(762.402mil,217.204mil) on Top Layer And Pad U1-4(762.402mil,191.614mil) on Top Layer [Top Solder] Mask Sliver [1.905mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1767.741mil|Location2.X=1773.991mil|Location1.Y=1266.284mil|Location2.Y=1272.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1767.741mil|Location2.X=1773.991mil|Location1.Y=1266.284mil|Location2.Y=1272.534mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.905mil &lt; 5mil) Between Pad U1-5(937.598mil,191.614mil) on Top Layer And Pad U1-6(937.598mil,217.204mil) on Top Layer [Top Solder] Mask Sliver [1.905mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1767.741mil|Location2.X=1773.991mil|Location1.Y=1291.875mil|Location2.Y=1298.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1767.741mil|Location2.X=1773.991mil|Location1.Y=1291.875mil|Location2.Y=1298.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.907mil &lt; 5mil) Between Pad U1-6(937.598mil,217.204mil) on Top Layer And Pad U1-7(937.598mil,242.796mil) on Top Layer [Top Solder] Mask Sliver [1.907mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1767.741mil|Location2.X=1773.991mil|Location1.Y=1317.466mil|Location2.Y=1323.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1767.741mil|Location2.X=1773.991mil|Location1.Y=1317.466mil|Location2.Y=1323.716mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.905mil &lt; 5mil) Between Pad U1-7(937.598mil,242.796mil) on Top Layer And Pad U1-8(937.598mil,268.386mil) on Top Layer [Top Solder] Mask Sliver [1.905mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDCMGVLRFUIG2RFPTQPPDEF5FKPEK3XY15LZJPJDOV3UCDP4OGZTIB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1471.979mil|Location2.X=1483.229mil|Location1.Y=1511.846mil|Location2.Y=1523.096mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1471.979mil|Location2.X=1483.229mil|Location1.Y=1511.846mil|Location2.Y=1523.096mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.427mil &lt; 10mil) Between Pad C10-1(630.325mil,470.964mil) on Top Layer And Text "C10" (612.608mil,413.768mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.427mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.631mil|Location2.X=1790.881mil|Location1.Y=1167.02mil|Location2.Y=1178.27mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.631mil|Location2.X=1790.881mil|Location1.Y=1167.02mil|Location2.Y=1178.27mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.309mil &lt; 10mil) Between Pad C3-1(949.036mil,130mil) on Top Layer And Text "C3" (895.276mil,70mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.309mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1749.119mil|Location2.X=1760.369mil|Location1.Y=1167.02mil|Location2.Y=1178.27mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1749.119mil|Location2.X=1760.369mil|Location1.Y=1167.02mil|Location2.Y=1178.27mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.309mil &lt; 10mil) Between Pad C3-2(890.964mil,130mil) on Top Layer And Text "C3" (895.276mil,70mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.309mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1744.649mil|Location2.X=1755.899mil|Location1.Y=1411.725mil|Location2.Y=1422.975mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1744.649mil|Location2.X=1755.899mil|Location1.Y=1411.725mil|Location2.Y=1422.975mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.299mil &lt; 10mil) Between Pad C4-1(890.964mil,330mil) on Top Layer And Text "C4" (895.276mil,360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.299mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1784.637mil|Location2.X=1795.887mil|Location1.Y=1411.725mil|Location2.Y=1422.975mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1784.637mil|Location2.X=1795.887mil|Location1.Y=1411.725mil|Location2.Y=1422.975mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.299mil &lt; 10mil) Between Pad C4-2(949.036mil,330mil) on Top Layer And Text "C4" (895.276mil,360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.299mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1312.02mil|Location2.X=1323.27mil|Location1.Y=1799.391mil|Location2.Y=1810.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1312.02mil|Location2.X=1323.27mil|Location1.Y=1799.391mil|Location2.Y=1810.641mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.309mil &lt; 10mil) Between Pad C6-1(490mil,740.964mil) on Top Layer And Text "C6" (430mil,790mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.309mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1312.019mil|Location2.X=1323.269mil|Location1.Y=1844.549mil|Location2.Y=1855.799mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1312.019mil|Location2.X=1323.269mil|Location1.Y=1844.549mil|Location2.Y=1855.799mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.312mil &lt; 10mil) Between Pad C6-2(490mil,799.036mil) on Top Layer And Text "C6" (430mil,790mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.312mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1516.964mil|Location2.X=1528.214mil|Location1.Y=1511.846mil|Location2.Y=1523.096mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1516.964mil|Location2.X=1528.214mil|Location1.Y=1511.846mil|Location2.Y=1523.096mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.427mil &lt; 10mil) Between Pad C9-1(680mil,470.964mil) on Top Layer And Text "C10" (612.608mil,413.768mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.427mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1546.912mil|Location2.X=1558.162mil|Location1.Y=1545.902mil|Location2.Y=1557.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1546.912mil|Location2.X=1558.162mil|Location1.Y=1545.902mil|Location2.Y=1557.152mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.461mil &lt; 10mil) Between Pad C9-1(680mil,470.964mil) on Top Layer And Text "C9" (710mil,485mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.461mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1546.912mil|Location2.X=1558.162mil|Location1.Y=1572.844mil|Location2.Y=1584.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1546.912mil|Location2.X=1558.162mil|Location1.Y=1572.844mil|Location2.Y=1584.094mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.465mil &lt; 10mil) Between Pad C9-2(680mil,529.036mil) on Top Layer And Text "C9" (710mil,485mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.466mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1171.423mil|Location2.Y=1182.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1171.423mil|Location2.Y=1182.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J1-(280mil,112.048mil) on Top Layer And Track (191.418mil,112.048mil)(230.788mil,112.048mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1171.423mil|Location2.Y=1182.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1171.423mil|Location2.Y=1182.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J1-(280mil,112.048mil) on Top Layer And Track (329.212mil,112.048mil)(368.582mil,112.048mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1427.327mil|Location2.Y=1438.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1427.327mil|Location2.Y=1438.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J1-(280mil,367.952mil) on Top Layer And Track (205mil,367.952mil)(230.788mil,367.952mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1427.327mil|Location2.Y=1438.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1427.327mil|Location2.Y=1438.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J1-(280mil,367.952mil) on Top Layer And Track (329.212mil,367.952mil)(368.582mil,367.952mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1369.257mil|Location2.Y=1380.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1369.257mil|Location2.Y=1380.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J1-1(209.134mil,299.056mil) on Top Layer And Track (191.418mil,318.74mil)(191.418mil,354.37mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1369.257mil|Location2.Y=1380.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1369.257mil|Location2.Y=1380.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J1-14(350.866mil,299.056mil) on Top Layer And Track (368.582mil,318.74mil)(368.582mil,367.952mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1229.493mil|Location2.Y=1240.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1229.493mil|Location2.Y=1240.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J1-7(209.134mil,180.944mil) on Top Layer And Track (191.418mil,112.048mil)(191.418mil,161.26mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1229.493mil|Location2.Y=1240.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1229.493mil|Location2.Y=1240.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J1-8(350.866mil,180.944mil) on Top Layer And Track (368.582mil,112.048mil)(368.582mil,161.26mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1691.423mil|Location2.Y=1702.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1691.423mil|Location2.Y=1702.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J2-(280mil,632.048mil) on Top Layer And Track (191.418mil,632.048mil)(230.788mil,632.048mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1691.423mil|Location2.Y=1702.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1691.423mil|Location2.Y=1702.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J2-(280mil,632.048mil) on Top Layer And Track (329.212mil,632.048mil)(368.582mil,632.048mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1947.327mil|Location2.Y=1958.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1084.021mil|Location2.X=1095.271mil|Location1.Y=1947.327mil|Location2.Y=1958.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J2-(280mil,887.952mil) on Top Layer And Track (205mil,887.952mil)(230.788mil,887.952mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1947.327mil|Location2.Y=1958.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1164.729mil|Location2.X=1175.979mil|Location1.Y=1947.327mil|Location2.Y=1958.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J2-(280mil,887.952mil) on Top Layer And Track (329.212mil,887.952mil)(368.582mil,887.952mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1889.257mil|Location2.Y=1900.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1889.257mil|Location2.Y=1900.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J2-1(209.134mil,819.056mil) on Top Layer And Track (191.418mil,838.74mil)(191.418mil,874.37mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1889.257mil|Location2.Y=1900.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1889.257mil|Location2.Y=1900.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J2-14(350.866mil,819.056mil) on Top Layer And Track (368.582mil,838.74mil)(368.582mil,887.952mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1749.493mil|Location2.Y=1760.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.793mil|Location2.X=1047.043mil|Location1.Y=1749.493mil|Location2.Y=1760.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J2-7(209.134mil,700.944mil) on Top Layer And Track (191.418mil,632.048mil)(191.418mil,681.26mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1749.493mil|Location2.Y=1760.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1212.957mil|Location2.X=1224.207mil|Location1.Y=1749.493mil|Location2.Y=1760.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J2-8(350.866mil,700.944mil) on Top Layer And Track (368.582mil,632.048mil)(368.582mil,681.26mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1204.021mil|Location2.X=1215.271mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1204.021mil|Location2.X=1215.271mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J3-(400mil,372.048mil) on Bottom Layer And Track (311.418mil,372.048mil)(350.788mil,372.048mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.729mil|Location2.X=1295.979mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.729mil|Location2.X=1295.979mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J3-(400mil,372.048mil) on Bottom Layer And Track (449.212mil,372.048mil)(488.582mil,372.048mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1204.021mil|Location2.X=1215.271mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1204.021mil|Location2.X=1215.271mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J3-(400mil,627.952mil) on Bottom Layer And Track (325mil,627.952mil)(350.788mil,627.952mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.729mil|Location2.X=1295.979mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1284.729mil|Location2.X=1295.979mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J3-(400mil,627.952mil) on Bottom Layer And Track (449.212mil,627.952mil)(488.582mil,627.952mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1155.793mil|Location2.X=1167.043mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1155.793mil|Location2.X=1167.043mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J3-1(329.134mil,559.056mil) on Bottom Layer And Track (311.418mil,578.74mil)(311.418mil,614.37mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1332.957mil|Location2.X=1344.207mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1332.957mil|Location2.X=1344.207mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J3-14(470.866mil,559.056mil) on Bottom Layer And Track (488.582mil,578.74mil)(488.582mil,627.952mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1155.793mil|Location2.X=1167.043mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1155.793mil|Location2.X=1167.043mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J3-7(329.134mil,440.944mil) on Bottom Layer And Track (311.418mil,372.048mil)(311.418mil,421.26mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1332.957mil|Location2.X=1344.207mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1332.957mil|Location2.X=1344.207mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J3-8(470.866mil,440.944mil) on Bottom Layer And Track (488.582mil,372.048mil)(488.582mil,421.26mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.729mil|Location2.X=1945.979mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.729mil|Location2.X=1945.979mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J4-(1050mil,372.048mil) on Bottom Layer And Track (1099.212mil,372.048mil)(1138.582mil,372.048mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.021mil|Location2.X=1865.271mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.021mil|Location2.X=1865.271mil|Location1.Y=1431.423mil|Location2.Y=1442.673mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J4-(1050mil,372.048mil) on Bottom Layer And Track (961.418mil,372.048mil)(1000.788mil,372.048mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.729mil|Location2.X=1945.979mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1934.729mil|Location2.X=1945.979mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J4-(1050mil,627.952mil) on Bottom Layer And Track (1099.212mil,627.952mil)(1138.582mil,627.952mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.021mil|Location2.X=1865.271mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.021mil|Location2.X=1865.271mil|Location1.Y=1687.327mil|Location2.Y=1698.577mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.842mil &lt; 10mil) Between Pad J4-(1050mil,627.952mil) on Bottom Layer And Track (975mil,627.952mil)(1000.788mil,627.952mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.842mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1805.793mil|Location2.X=1817.043mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1805.793mil|Location2.X=1817.043mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J4-1(979.134mil,559.056mil) on Bottom Layer And Track (961.418mil,578.74mil)(961.418mil,614.37mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.957mil|Location2.X=1994.207mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.957mil|Location2.X=1994.207mil|Location1.Y=1629.257mil|Location2.Y=1640.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J4-14(1120.866mil,559.056mil) on Bottom Layer And Track (1138.582mil,578.74mil)(1138.582mil,627.952mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1805.793mil|Location2.X=1817.043mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1805.793mil|Location2.X=1817.043mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J4-7(979.134mil,440.944mil) on Bottom Layer And Track (961.418mil,372.048mil)(961.418mil,421.26mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.957mil|Location2.X=1994.207mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.957mil|Location2.X=1994.207mil|Location1.Y=1489.493mil|Location2.Y=1500.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.841mil &lt; 10mil) Between Pad J4-8(1120.866mil,440.944mil) on Bottom Layer And Track (1138.582mil,372.048mil)(1138.582mil,421.26mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [9.841mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1586.233mil|Location2.X=1597.483mil|Location1.Y=1796.799mil|Location2.Y=1808.049mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1586.233mil|Location2.X=1597.483mil|Location1.Y=1796.799mil|Location2.Y=1808.049mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.284mil &lt; 10mil) Between Pad R10-1(720mil,741.948mil) on Top Layer And Text "R10" (750mil,807.402mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.284mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1586.233mil|Location2.X=1597.483mil|Location1.Y=1866.777mil|Location2.Y=1878.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1586.233mil|Location2.X=1597.483mil|Location1.Y=1866.777mil|Location2.Y=1878.027mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.284mil &lt; 10mil) Between Pad R10-2(720mil,798.052mil) on Top Layer And Text "R10" (750mil,807.402mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.284mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1487.309mil|Location2.X=1498.559mil|Location1.Y=1411.032mil|Location2.Y=1422.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1487.309mil|Location2.X=1498.559mil|Location1.Y=1411.032mil|Location2.Y=1422.282mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.88mil &lt; 10mil) Between Pad R3-1(648.052mil,330mil) on Top Layer And Text "R3" (597.948mil,359.596mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.88mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1442.323mil|Location2.X=1453.573mil|Location1.Y=1411.032mil|Location2.Y=1422.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1442.323mil|Location2.X=1453.573mil|Location1.Y=1411.032mil|Location2.Y=1422.282mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.88mil &lt; 10mil) Between Pad R3-2(591.948mil,330mil) on Top Layer And Text "R3" (597.948mil,359.596mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.88mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1685.738mil|Location2.X=1696.988mil|Location1.Y=1167.512mil|Location2.Y=1178.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1685.738mil|Location2.X=1696.988mil|Location1.Y=1167.512mil|Location2.Y=1178.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.293mil &lt; 10mil) Between Pad R4-1(848.052mil,130mil) on Top Layer And Text "R4" (796.378mil,70mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.293mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1640.753mil|Location2.X=1652.003mil|Location1.Y=1167.512mil|Location2.Y=1178.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1640.753mil|Location2.X=1652.003mil|Location1.Y=1167.512mil|Location2.Y=1178.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.293mil &lt; 10mil) Between Pad R4-2(791.948mil,130mil) on Top Layer And Text "R4" (796.378mil,70mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.293mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1540.753mil|Location2.X=1552.003mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1540.753mil|Location2.X=1552.003mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.284mil &lt; 10mil) Between Pad R5-1(691.948mil,330mil) on Top Layer And Text "R5" (696.378mil,360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.284mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1585.738mil|Location2.X=1596.988mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1585.738mil|Location2.X=1596.988mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.284mil &lt; 10mil) Between Pad R5-2(748.052mil,330mil) on Top Layer And Text "R5" (696.378mil,360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.284mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1679.238mil|Location2.X=1690.488mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1679.238mil|Location2.X=1690.488mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.284mil &lt; 10mil) Between Pad R6-1(848.052mil,330mil) on Top Layer And Text "R6" (796.378mil,360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.284mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1640.753mil|Location2.X=1652.003mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1640.753mil|Location2.X=1652.003mil|Location1.Y=1411.233mil|Location2.Y=1422.483mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.284mil &lt; 10mil) Between Pad R6-2(791.948mil,330mil) on Top Layer And Text "R6" (796.378mil,360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.284mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1326.186mil|Location2.X=1337.436mil|Location1.Y=1707.315mil|Location2.Y=1718.565mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1326.186mil|Location2.X=1337.436mil|Location1.Y=1707.315mil|Location2.Y=1718.565mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.899mil &lt; 10mil) Between Pad R9-1(481.948mil,669.606mil) on Top Layer And Text "R9" (481.811mil,610mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.899mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1371.171mil|Location2.X=1382.421mil|Location1.Y=1707.315mil|Location2.Y=1718.565mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1371.171mil|Location2.X=1382.421mil|Location1.Y=1707.315mil|Location2.Y=1718.565mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.899mil &lt; 10mil) Between Pad R9-2(538.052mil,669.606mil) on Top Layer And Text "R9" (481.811mil,610mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.899mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
