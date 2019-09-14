@@ -1,6 +1,0 @@
-Removed Pin From Net: NetName=VREF Pin=J1-4
-Added Pin To Net: NetName=VREF Pin=J1-8
-Added Pin To Net: NetName=NetJ1_4 Pin=J1-4
-Added Pin To Net: NetName=NetJ1_4 Pin=J2-3
-Added Net: Name=NetJ1_4
-Added Member To Class: ClassName=Tone Stack Member=Component U2 OPA191
