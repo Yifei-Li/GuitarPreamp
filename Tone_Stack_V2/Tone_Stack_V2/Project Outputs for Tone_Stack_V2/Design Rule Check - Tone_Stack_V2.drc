@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\Projects\GuitarPreamp\Tone_Stack_V2\Tone_Stack_V2\Tone_Stack_V2.PcbDoc
-Date     : 2019-09-12
-Time     : 9:11:52 PM
+Date     : 2019-09-25
+Time     : 9:52:37 PM
 
 Processing Rule : Clearance Constraint (Gap=7mil) (All),(All)
    Violation between Clearance Constraint: (0.63mil < 5mil) Between Arc (90mil,390.001mil) on Bottom Layer And Pad Free-(90mil,390.001mil) on Multi-Layer 
@@ -164,4 +164,4 @@ Rule Violations :0
 
 Violations Detected : 116
 Waived Violations : 0
-Time Elapsed        : 00:00:00
+Time Elapsed        : 00:00:01

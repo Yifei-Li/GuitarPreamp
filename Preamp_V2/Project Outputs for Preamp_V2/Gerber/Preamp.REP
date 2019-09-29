@@ -2,6 +2,48 @@
 FileName = Preamp.GBR
 AutoAperture = True
 *************************************************************
+Generating : Keep-Out Layer
+      File : Preamp.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Preamp.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D13
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Preamp.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D23
+    D24
+    D37
+    D38
+*************************************************************
+
+*************************************************************
 Generating : Top Solder
       File : Preamp.GTS
 
@@ -54,11 +96,10 @@ Used DCodes :
     D22
     D23
     D25
+    D33
+    D34
     D35
     D36
-    D37
-    D38
-    D39
 *************************************************************
 
 *************************************************************
@@ -84,50 +125,5 @@ Used DCodes :
     D32
     D33
     D34
-    D35
-    D36
-    D37
-*************************************************************
-
-*************************************************************
-Generating : Keep-Out Layer
-      File : Preamp.GKO
-
-    Adding Layer      : Keep-Out Layer
-
-
-Used DCodes :
-    D14
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Preamp.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D13
-    D14
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : Preamp.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D22
-    D23
-    D24
-    D40
-    D41
 *************************************************************
 
