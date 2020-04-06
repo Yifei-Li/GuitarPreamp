@@ -1,0 +1,106 @@
+*************************************************************
+FileName = Push_Pull_Pot_Breakout.GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Overlay
+      File : Push_Pull_Pot_Breakout.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Outline
+      File : Push_Pull_Pot_Breakout.GM2
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Push_Pull_Pot_Breakout.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : Push_Pull_Pot_Breakout.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Push_Pull_Pot_Breakout.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Push_Pull_Pot_Breakout.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Push_Pull_Pot_Breakout.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D16
+    D17
+    D18
+    D19
+    D20
+*************************************************************
+

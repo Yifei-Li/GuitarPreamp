@@ -160,6 +160,58 @@ DocumentUniqueId=
 DocumentPath=Project Outputs for Tone_Stack_V2\Design Rule Check - Tone_Stack_V2.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.REP
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Tone_Stack_V2\OSH Park 4 Layer\Tone_Stack_V2.TXT
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0
@@ -365,7 +417,7 @@ OutputDefault12=0
 [OutputGroup6]
 Name=Report Outputs
 Description=
-TargetPrinter=Microsoft Print to PDF
+TargetPrinter=Brother DCP-L2540DW series Printer
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=BOM_PartType
 OutputName1=Bill of Materials
@@ -373,6 +425,22 @@ OutputDocumentPath1=
 OutputVariantName1=[No Variations]
 OutputDefault1=0
 PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+Configuration1_Name1=ColumnNameFormat
+Configuration1_Item1=CaptionAsName
+Configuration1_Name2=Filter
+Configuration1_Item2=545046300E5446696C74657257726170706572000D46696C7465722E416374697665090F46696C7465722E43726974657269610A04000000000000000000
+Configuration1_Name3=ForceUpdateSettings
+Configuration1_Item3=False
+Configuration1_Name4=General
+Configuration1_Item4=OpenExported=False|AddToProject=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePCBData=False|IncludeVaultData=True|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=|BatchMode=5|FormWidth=1429|FormHeight=737|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=<none>|ViewType=0
+Configuration1_Name5=GroupOrder
+Configuration1_Item5=Comment=True|Footprint=True
+Configuration1_Name6=OutputConfigurationParameter1
+Configuration1_Item6=se|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Absolute|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16973830~1,16973834~1,16777217~1,16777218~1,16777219~1,16842751~1,16973835~1,16973831~1,16908290~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False
+Configuration1_Name7=SortOrder
+Configuration1_Item7=Comment=Down
+Configuration1_Name8=VisibleOrder
+Configuration1_Item8=LibRef=244|Designator=60|Digikey Part Number=119|Footprint=67|Quantity=26|Rating=64
 OutputType2=ComponentCrossReference
 OutputName2=Component Cross Reference Report
 OutputDocumentPath2=
@@ -1040,8 +1108,8 @@ ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 ComponentLibIdentifierKind1=Library Name And Type
 ComponentLibraryIdentifier1=GuitarLibrary.SchLib
-ComponentDesignItemID1=CAP CER 0.1uF 0603
-ComponentSymbolReference1=CAP CER 0.1uF 0603
+ComponentDesignItemID1=CAP CER 0.1UF 50V X7R 0603
+ComponentSymbolReference1=CAP CER 0.1UF 50V X7R 0603
 ComponentUpdate1=1
 ComponentIsDeviceSheet1=0
 ComponentLibIdentifierKind2=Library Name And Type
@@ -1052,68 +1120,68 @@ ComponentUpdate2=1
 ComponentIsDeviceSheet2=0
 ComponentLibIdentifierKind3=Library Name And Type
 ComponentLibraryIdentifier3=GuitarLibrary.SchLib
-ComponentDesignItemID3=CAP CER 4700pF 0603
-ComponentSymbolReference3=CAP CER 4700pF 0603
+ComponentDesignItemID3=CAP CER 1UF 25V X7R 0603
+ComponentSymbolReference3=CAP CER 1UF 25V X7R 0603
 ComponentUpdate3=1
 ComponentIsDeviceSheet3=0
 ComponentLibIdentifierKind4=Library Name And Type
 ComponentLibraryIdentifier4=GuitarLibrary.SchLib
-ComponentDesignItemID4=DF12(3.0)-14DP-0.5V(86)
-ComponentSymbolReference4=DF12(3.0)-14DP-0.5V(86)
+ComponentDesignItemID4=CAP CER 4700pF 0603
+ComponentSymbolReference4=CAP CER 4700pF 0603
 ComponentUpdate4=1
 ComponentIsDeviceSheet4=0
 ComponentLibIdentifierKind5=Library Name And Type
 ComponentLibraryIdentifier5=GuitarLibrary.SchLib
-ComponentDesignItemID5=DF12(3.0)-14DS-0.5V(86)
-ComponentSymbolReference5=DF12(3.0)-14DS-0.5V(86)
+ComponentDesignItemID5=DF12(3.0)-14DP-0.5V(86)
+ComponentSymbolReference5=DF12(3.0)-14DP-0.5V(86)
 ComponentUpdate5=1
 ComponentIsDeviceSheet5=0
 ComponentLibIdentifierKind6=Library Name And Type
 ComponentLibraryIdentifier6=GuitarLibrary.SchLib
-ComponentDesignItemID6=DF12(3.0)-14DS-0.5V(86)-COMPOSITE
-ComponentSymbolReference6=DF12(3.0)-14DS-0.5V(86)-COMPOSITE
+ComponentDesignItemID6=DF12(3.0)-14DS-0.5V(86)
+ComponentSymbolReference6=DF12(3.0)-14DS-0.5V(86)
 ComponentUpdate6=1
 ComponentIsDeviceSheet6=0
 ComponentLibIdentifierKind7=Library Name And Type
 ComponentLibraryIdentifier7=GuitarLibrary.SchLib
-ComponentDesignItemID7=LDK320AM-R
-ComponentSymbolReference7=LDK320AM-R
+ComponentDesignItemID7=DF12(3.0)-14DS-0.5V(86)-COMPOSITE
+ComponentSymbolReference7=DF12(3.0)-14DS-0.5V(86)-COMPOSITE
 ComponentUpdate7=1
 ComponentIsDeviceSheet7=0
 ComponentLibIdentifierKind8=Library Name And Type
 ComponentLibraryIdentifier8=GuitarLibrary.SchLib
-ComponentDesignItemID8=MOSFET_P_CH_20V_6A_SOT23-3
-ComponentSymbolReference8=MOSFET_P_CH_20V_6A_SOT23-3
+ComponentDesignItemID8=LDK320AM-R
+ComponentSymbolReference8=LDK320AM-R
 ComponentUpdate8=1
 ComponentIsDeviceSheet8=0
 ComponentLibIdentifierKind9=Library Name And Type
 ComponentLibraryIdentifier9=GuitarLibrary.SchLib
-ComponentDesignItemID9=OPA2170AIDGKR
-ComponentSymbolReference9=OPA2170AIDGKR
+ComponentDesignItemID9=MOSFET_P_CH_20V_6A_SOT23-3
+ComponentSymbolReference9=MOSFET_P_CH_20V_6A_SOT23-3
 ComponentUpdate9=1
 ComponentIsDeviceSheet9=0
 ComponentLibIdentifierKind10=Library Name And Type
 ComponentLibraryIdentifier10=GuitarLibrary.SchLib
-ComponentDesignItemID10=RES 10K 0603
-ComponentSymbolReference10=RES 10K 0603
+ComponentDesignItemID10=OPA2170AIDGKR
+ComponentSymbolReference10=OPA2170AIDGKR
 ComponentUpdate10=1
 ComponentIsDeviceSheet10=0
 ComponentLibIdentifierKind11=Library Name And Type
 ComponentLibraryIdentifier11=GuitarLibrary.SchLib
-ComponentDesignItemID11=RES 20K 0603
-ComponentSymbolReference11=RES 20K 0603
+ComponentDesignItemID11=RES SMD 10K OHM 1% 1/10W 0603
+ComponentSymbolReference11=RES SMD 10K OHM 1% 1/10W 0603
 ComponentUpdate11=1
 ComponentIsDeviceSheet11=0
 ComponentLibIdentifierKind12=Library Name And Type
 ComponentLibraryIdentifier12=GuitarLibrary.SchLib
-ComponentDesignItemID12=RES 47K 0603
-ComponentSymbolReference12=RES 47K 0603
+ComponentDesignItemID12=RES SMD 20K OHM 1% 1/10W 0603
+ComponentSymbolReference12=RES SMD 20K OHM 1% 1/10W 0603
 ComponentUpdate12=1
 ComponentIsDeviceSheet12=0
 ComponentLibIdentifierKind13=Library Name And Type
 ComponentLibraryIdentifier13=GuitarLibrary.SchLib
-ComponentDesignItemID13=RES SMD 10K OHM 1% 1/10W 0603
-ComponentSymbolReference13=RES SMD 10K OHM 1% 1/10W 0603
+ComponentDesignItemID13=RES SMD 47K OHM 1% 1/10W 0603
+ComponentSymbolReference13=RES SMD 47K OHM 1% 1/10W 0603
 ComponentUpdate13=1
 ComponentIsDeviceSheet13=0
 FullReplace=1
@@ -1201,6 +1269,90 @@ ModelUpdate6=1
 SelectedOnly=0
 UpdateVariants=1
 PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=GuitarLibrary.SchLib
+ComponentDesignItemID0=CAP CER 0.012UF 25V C0G/NP0 0603
+ComponentSymbolReference0=CAP CER 0.012UF 25V C0G/NP0 0603
+ComponentUpdate0=1
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=GuitarLibrary.SchLib
+ComponentDesignItemID1=CAP CER 0.1uF 0603
+ComponentSymbolReference1=CAP CER 0.1uF 0603
+ComponentUpdate1=1
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=GuitarLibrary.SchLib
+ComponentDesignItemID2=CAP CER 1uF 0603
+ComponentSymbolReference2=CAP CER 1uF 0603
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Name And Type
+ComponentLibraryIdentifier3=GuitarLibrary.SchLib
+ComponentDesignItemID3=CAP CER 4700pF 0603
+ComponentSymbolReference3=CAP CER 4700pF 0603
+ComponentUpdate3=1
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=GuitarLibrary.SchLib
+ComponentDesignItemID4=DF12(3.0)-14DP-0.5V(86)
+ComponentSymbolReference4=DF12(3.0)-14DP-0.5V(86)
+ComponentUpdate4=1
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=GuitarLibrary.SchLib
+ComponentDesignItemID5=DF12(3.0)-14DS-0.5V(86)
+ComponentSymbolReference5=DF12(3.0)-14DS-0.5V(86)
+ComponentUpdate5=1
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=GuitarLibrary.SchLib
+ComponentDesignItemID6=DF12(3.0)-14DS-0.5V(86)-COMPOSITE
+ComponentSymbolReference6=DF12(3.0)-14DS-0.5V(86)-COMPOSITE
+ComponentUpdate6=1
+ComponentIsDeviceSheet6=0
+ComponentLibIdentifierKind7=Library Name And Type
+ComponentLibraryIdentifier7=GuitarLibrary.SchLib
+ComponentDesignItemID7=LDK320AM-R
+ComponentSymbolReference7=LDK320AM-R
+ComponentUpdate7=1
+ComponentIsDeviceSheet7=0
+ComponentLibIdentifierKind8=Library Name And Type
+ComponentLibraryIdentifier8=GuitarLibrary.SchLib
+ComponentDesignItemID8=MOSFET_P_CH_20V_6A_SOT23-3
+ComponentSymbolReference8=MOSFET_P_CH_20V_6A_SOT23-3
+ComponentUpdate8=1
+ComponentIsDeviceSheet8=0
+ComponentLibIdentifierKind9=Library Name And Type
+ComponentLibraryIdentifier9=GuitarLibrary.SchLib
+ComponentDesignItemID9=OPA2170AIDGKR
+ComponentSymbolReference9=OPA2170AIDGKR
+ComponentUpdate9=1
+ComponentIsDeviceSheet9=0
+ComponentLibIdentifierKind10=Library Name And Type
+ComponentLibraryIdentifier10=GuitarLibrary.SchLib
+ComponentDesignItemID10=RES 10K 0603
+ComponentSymbolReference10=RES 10K 0603
+ComponentUpdate10=1
+ComponentIsDeviceSheet10=0
+ComponentLibIdentifierKind11=Library Name And Type
+ComponentLibraryIdentifier11=GuitarLibrary.SchLib
+ComponentDesignItemID11=RES 20K 0603
+ComponentSymbolReference11=RES 20K 0603
+ComponentUpdate11=1
+ComponentIsDeviceSheet11=0
+ComponentLibIdentifierKind12=Library Name And Type
+ComponentLibraryIdentifier12=GuitarLibrary.SchLib
+ComponentDesignItemID12=RES 47K 0603
+ComponentSymbolReference12=RES 47K 0603
+ComponentUpdate12=1
+ComponentIsDeviceSheet12=0
+ComponentLibIdentifierKind13=Library Name And Type
+ComponentLibraryIdentifier13=GuitarLibrary.SchLib
+ComponentDesignItemID13=RES SMD 10K OHM 1% 1/10W 0603
+ComponentSymbolReference13=RES SMD 10K OHM 1% 1/10W 0603
+ComponentUpdate13=1
+ComponentIsDeviceSheet13=0
 
 [Comparison Options]
 ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0

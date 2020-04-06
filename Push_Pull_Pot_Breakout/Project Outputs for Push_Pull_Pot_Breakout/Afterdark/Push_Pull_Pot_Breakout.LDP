@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\Projects\GuitarPreamp\Push_Pull_Pot_Breakout\Push_Pull_Pot_Breakout.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=push_pull_pot_breakout-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=push_pull_pot_breakout-slotholes.txt|DrillLayers=gtl,gbl

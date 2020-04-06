@@ -1,0 +1,16 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Stacked_Pot_Breakout.PcbDoc   2019-10-05  2:48:22 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Stacked_Pot_Breakout-RoundHoles.TXT
+ASCII SlotHoles File : Stacked_Pot_Breakout-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      39mil (1.001mm)                                           Round             8         PTH        0.00inch (0.00mm)
+T2      39mil (1.001mm)                                           Slot              3         NPTH       0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              11
+
+Total Processing Time (hh:mm:ss) : 00:00:00

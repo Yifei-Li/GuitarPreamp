@@ -1,0 +1,99 @@
+*************************************************************
+FileName = Stacked_Pot_Breakout.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : Stacked_Pot_Breakout.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Stacked_Pot_Breakout.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Outline
+      File : Stacked_Pot_Breakout.GM2
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Stacked_Pot_Breakout.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Stacked_Pot_Breakout.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Stacked_Pot_Breakout.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Stacked_Pot_Breakout.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D18
+*************************************************************
+

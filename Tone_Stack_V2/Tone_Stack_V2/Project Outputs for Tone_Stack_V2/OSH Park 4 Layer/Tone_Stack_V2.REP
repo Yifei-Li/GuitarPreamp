@@ -1,0 +1,157 @@
+*************************************************************
+FileName = Tone_Stack_V2.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : Tone_Stack_V2.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Ground Plane
+      File : Tone_Stack_V2.G1
+
+    Adding Layer      : Ground Plane
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Tone_Stack_V2.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D27
+    D31
+    D32
+    D38
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Power Plane
+      File : Tone_Stack_V2.G2
+
+    Adding Layer      : Power Plane
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Tone_Stack_V2.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Tone_Stack_V2.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Tone_Stack_V2.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Outline
+      File : Tone_Stack_V2.GM2
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Tone_Stack_V2.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D12
+    D13
+    D40
+*************************************************************
+

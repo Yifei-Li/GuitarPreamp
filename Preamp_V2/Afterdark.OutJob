@@ -15,7 +15,7 @@ LifeCycleDefinitionGUID=
 RevisionNamingSchemeGUID=
 
 [OutputGroup1]
-Name=Afterdark.OutJob
+Name=
 Description=
 TargetOutputMedium=Folder Structure
 VariantName=[No Variations]
@@ -93,9 +93,9 @@ ReleaseManaged3=1
 OutputBasePath3=Project Outputs for Preamp_V2
 OutputPathMedia3=
 OutputPathMediaValue3=
-OutputPathOutputer3=[Output Type]
+OutputPathOutputer3=[Output Custom]
 OutputPathOutputerPrefix3=
-OutputPathOutputerValue3=
+OutputPathOutputerValue3=Afterdark
 OutputFileName3=
 OutputFileNameMulti3=Preamp
 UseOutputNameForMulti3=1

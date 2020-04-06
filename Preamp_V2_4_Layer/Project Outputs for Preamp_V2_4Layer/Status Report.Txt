@@ -1,12 +1,9 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : PCB Document [Preamp.PcbDoc]
-   Generated File[Preamp.TXT]
-   Generated File[Preamp.LDP]
-   Generated File[Preamp.DRR]
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [Preamp_V2_4Layer.PrjPcb]
 
 
-Files Generated   : 3
+Files Generated   : 0
 Documents Printed : 0
 
-Finished Output Generation At 10:44:11 PM On 2019-09-18
+Finished Output Generation At 3:38:24 PM On 2019-10-06

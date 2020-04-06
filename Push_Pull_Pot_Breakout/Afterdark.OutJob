@@ -15,7 +15,7 @@ LifeCycleDefinitionGUID=
 RevisionNamingSchemeGUID=
 
 [OutputGroup1]
-Name=Afterdark.OutJob
+Name=
 Description=
 TargetOutputMedium=Folder Structure
 VariantName=[No Variations]
@@ -88,14 +88,14 @@ ShowComponentParameters2=1
 GlobalBookmarks2=0
 PDFACompliance2=Disabled
 PDFVersion2=Default
-OutputFilePath3=D:\Projects\GuitarPreamp\Preamp_V2\Project Outputs for Preamp_V2\
+OutputFilePath3=D:\Projects\GuitarPreamp\Push_Pull_Pot_Breakout\Project Outputs for Push_Pull_Pot_Breakout\
 ReleaseManaged3=1
 OutputBasePath3=Project Outputs for Push_Pull_Pot_Breakout
 OutputPathMedia3=
 OutputPathMediaValue3=
-OutputPathOutputer3=[Output Type]
+OutputPathOutputer3=[Output Custom]
 OutputPathOutputerPrefix3=
-OutputPathOutputerValue3=
+OutputPathOutputerValue3=Afterdark
 OutputFileName3=
 OutputFileNameMulti3=Preamp
 UseOutputNameForMulti3=1
@@ -142,7 +142,7 @@ WmvQuality4=80
 [GeneratedFilesSettings]
 RelativeOutputPath2=
 OpenOutputs2=1
-RelativeOutputPath3=D:\Projects\GuitarPreamp\Preamp_V2\Project Outputs for Preamp_V2\
+RelativeOutputPath3=D:\Projects\GuitarPreamp\Push_Pull_Pot_Breakout\Project Outputs for Push_Pull_Pot_Breakout\
 OpenOutputs3=1
 AddToProject3=1
 TimestampFolder3=0
